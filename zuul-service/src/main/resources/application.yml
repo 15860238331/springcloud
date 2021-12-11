@@ -1,0 +1,9 @@
+zuul:
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
+  routes:
+    user-service:
+      path: /user/**
+      serviceId: user-service  #校验通过的流量重定向到user-service中
+      strip-prefix: false
